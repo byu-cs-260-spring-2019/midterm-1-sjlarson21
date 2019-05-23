@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>MIDTERM</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body class="body">
+        <div class="transbox">
+            <div id="app">
+                <h1 class ="header">QUICKREADS</h1>
+                <br>
+                <h2 class ="header">YOUR FAVORITES</h2>
+                <br>
+                <ul>
+                    <li v-for="item in favorite"></li>
+                </ul>
+                <div class="favStyle">
+                        <button @click="favorite()">UNFAVORITE</button> 
+                        <br><br>
+                        <a class="link" href="index.html">GO BACK HOME</a>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script> <!--VUE-->
+        <!--<script src="https://openlibrary.org/api/books?bibkeys=ISBN:0451526538&callback=mycallback"></script> API-->
+        <!--<script src="https://openlibrary.org/search.json?q="></script>-->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script> <!--AXIOS-->
+        <script src="./script.js"></script>
+    </body>
+</html>

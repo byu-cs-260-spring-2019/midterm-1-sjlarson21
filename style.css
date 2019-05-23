@@ -1,0 +1,39 @@
+.body {
+    background-color: lightseagreen;
+}
+
+.header {
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.inputform {
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.favStyle {
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.transbox {
+    text-align: center;
+    margin: 50px;
+    /* background-color: lightsalmon; */
+    background-color: lightcyan;
+    opacity: none;
+}
+
+.link {
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration-color: darkcyan;
+    text-decoration: none;
+}
+
+.footer {
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+}
