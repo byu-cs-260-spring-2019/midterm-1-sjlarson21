@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>QUICKREADS</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body class="body">
+        <h1>HELLO WORLD!</h1>
+        <br>
+        <form class="inputform">
+            <label>Enter a book title: </label> <br>
+            <input id="bookInput" type="text"></input>
+
+            <input id="bookSubmit" type="submit"></input>
+        </form>
+        <div id="app">
+            <div v-if="loading">
+                <p>LOADING...</p>
+            </div>
+            <div v-else>
+                <!--BOOK RESULTS-->
+                <p>print out book results</p>
+            </div>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script> <!--VUE-->
+    <!--<script src="https://openlibrary.org/api/books?bibkeys=ISBN:0451526538&callback=mycallback"></script> API-->
+    <script src="https://openlibrary.org/search.json?q="></script>
+    <script src="./script.js"></script>
+    </body>
+</html>
