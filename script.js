@@ -18,7 +18,7 @@ let app= new Vue({
             title: '',
             author: '',
             date: '',
-            img: '',
+            img: ' {{ current.docs[0].isbn[0] }}',
         },
         favorites: {},
     },
@@ -40,6 +40,9 @@ let app= new Vue({
                 console.log(error);
             }
         },
+        // async getImage() {
+        //     const responseImg = await axios.get()
+        // },
         addFavorite() {
             //this.books.push();
             if(this.bookInput === ''){
