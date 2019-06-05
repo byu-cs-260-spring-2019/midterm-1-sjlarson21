@@ -12,6 +12,7 @@ let app= new Vue({
     el: '#app',
     data: {
         loading: false,
+        bookInput: '',
         current: {
             //if no info- don't display
             title: '',
@@ -39,26 +40,30 @@ let app= new Vue({
                 // console.log("response",response1);
                 // const json = await response1.json();
                 this.loading = true;
-                const value = document.getElementById("bookInput").value;
+                //const value = document.getElementById("bookInput").value;
+                //value = $("bookInput").val();
+                //var usrInput = document.getElementById("bookInput").value;
+                //const value = document.getElementById("bookInput").value;
                 const response = await axios.get('https://openlibrary.org/search.json?q=' + this.value);
+                console.log(response.data);
                 this.current = response.data;
                 this.loading = false;
                 //this.value = response.data.docs;
-                let results ="";
-                results += current.docs[0].title;
+                // let results ="";
+                // results += current.docs[0].title;
                 
-                document.getElementById("bookResults").innerHTML = results;
+                //document.getElementById("bookResults").innerHTML = results;
             } catch(error) {
                 console.log(error);
             }
         },
         favorite() {
-            this.books.push();
+            //this.books.push();
         },
     },
     computed: {
         bookResults() {
             //return this.books.docs[i];
-        }
-    }
+        },
+    },
 });

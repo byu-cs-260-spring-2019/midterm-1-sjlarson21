@@ -1,10 +1,18 @@
 .body {
-    background-color: lightseagreen;
+    background-color: lightgoldenrodyellow;
+    background-image:url(Images/openbooks.jpg);
+    height: 750px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
 }
 
 .header {
     text-align: center;
     font-family: Helvetica, Arial, sans-serif;
+    margin: 50px;
 }
 
 .inputform {
@@ -17,12 +25,20 @@
     font-family: Helvetica, Arial, sans-serif;
 }
 
+.printresults {
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
 .transbox {
     text-align: center;
-    margin: 50px;
-    /* background-color: lightsalmon; */
-    background-color: lightcyan;
+    margin: 100px;
+    background-color: lightskyblue;
+    /* background-color: lightcyan; */
+    border: 2px lightseagreen;
     opacity: none;
+    
+
 }
 
 .link {
