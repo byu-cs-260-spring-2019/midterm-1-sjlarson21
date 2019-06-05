@@ -18,8 +18,14 @@
 
                     <input id="bookSubmit" type="submit"></input>
                 </form>
-                <p>The value of bookInput from user is: {{ bookInput }}.</p>
-                
+                <p>The value of bookInput from user is: {{ bookInput }}</p>
+                <!-- <form class="inputform">
+                    <label>ENTER A BOOK TITLE: </label> <br>
+                    <input type="text" v-model="bookInput"></input>
+                    <input type="submit" id="bookSubmit" value="SUBMIT"></input>
+                </form> -->
+                <b></b>
+                <!-- <button @click="addFavorite">FAVORITE</button> -->
                 <div v-if="loading">
                     <p>LOADING...</p>
                 </div>
@@ -27,23 +33,28 @@
                     <!--BOOK RESULTS-->
                     <!-- <li v-for="item in bookResults"></li> -->
                     <!--<p>print out book results</p>-->
-                    <h2>{{current.docs[0].title}}</h2> <!--DISPLAY TITLE-->
-                    <p>{{current.docs[0].author}}</p> <!--DISPLAY AUTHOR-->
-                    <p>{{current.docs[0].first_publish_year}}</p> <!--DISPLAY DATE-->
-                    <img v-bind:src="current.img">
-                    <div id="bookResults"></div> <!--DISPLAY COVER IMAGE-->
+                    <div v-for="book in current">
+                        <h2>{{current.docs[0].title}}</h2> <!--DISPLAY TITLE-->
+                        <p>{{current.docs[0].author_name[0]}}</p> <!--DISPLAY AUTHOR-->
+                        <p>{{current.docs[0].first_publish_year}}</p> <!--DISPLAY DATE-->
                         <img v-bind:src="current.img">
+                        <p>{{current.docs[0].isbn[0]}}</p> <!--DISPLAY IMG ISBN-->
+
+                            <img v-bind:src="current.img">
+
+                        <button @click="addFavorite">FAVORITE</button>
                     </div>
-                <div class="favStyle">
-                    <button @click="favorite()">FAVORITE</button> 
-                    <br><br>
+                </div>
+                <b></b>
+                <div class="footer">
+                    <b></b>
                     <a class="link" href="favPage.html">GO TO MY FAVORITES</a>
+                    <br><br>
+                    <a href="https://github.com/byu-cs-260-spring-2019/midterm-1-sjlarson21">GITHUB</a>
                 </div>
             </div>
             <br>
-            <div class="footer">
-                <a href="https://github.com/byu-cs-260-spring-2019/midterm-1-sjlarson21">GITHUB</a>
-            </div>
+            
         </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script> <!--VUE-->

@@ -19,46 +19,33 @@ let app= new Vue({
             author: '',
             date: '',
             img: '',
-        }
+        },
+        favorites: {},
     },
     created() {
         this.quickbook();
     },
     methods: {
         async quickbook() {
-            //window.onload = function() {
-            //     document.getElementById("bookSubmit").addEventListener("click", async function(event) {
-            //         event.preventDefault();
-                    
-            //         if (value === "")
-            //             return;
-            //         console.log(value);
-            //     });
-            // const url1="https://openlibrary.org/search.json?q=" + value;
             try {
-                // const response1 = await fetch(url1);
-                // console.log("response",response1);
-                // const json = await response1.json();
                 this.loading = true;
-                //const value = document.getElementById("bookInput").value;
-                //value = $("bookInput").val();
-                //var usrInput = document.getElementById("bookInput").value;
-                //const value = document.getElementById("bookInput").value;
+
                 const response = await axios.get('https://openlibrary.org/search.json?q=' + this.value);
                 console.log(response.data);
                 this.current = response.data;
                 this.loading = false;
                 //this.value = response.data.docs;
-                // let results ="";
-                // results += current.docs[0].title;
-                
-                //document.getElementById("bookResults").innerHTML = results;
+
             } catch(error) {
                 console.log(error);
             }
         },
-        favorite() {
+        addFavorite() {
             //this.books.push();
+            if(this.bookInput === ''){
+                return;
+            }
+            this.favorites.push(this.bookInput);
         },
     },
     computed: {
@@ -67,3 +54,27 @@ let app= new Vue({
         },
     },
 });
+
+//window.onload = function() {
+//     document.getElementById("bookSubmit").addEventListener("click", async function(event) {
+//         event.preventDefault();
+        
+//         if (value === "")
+//             return;
+//         console.log(value);
+//     });
+// const url1="https://openlibrary.org/search.json?q=" + value;
+
+// const response1 = await fetch(url1);
+// console.log("response",response1);
+// const json = await response1.json();
+
+//const value = document.getElementById("bookInput").value;
+//value = $("bookInput").val();
+//var usrInput = document.getElementById("bookInput").value;
+//const value = document.getElementById("bookInput").value;
+
+// let results ="";
+// results += current.docs[0].title;
+
+//document.getElementById("bookResults").innerHTML = results;

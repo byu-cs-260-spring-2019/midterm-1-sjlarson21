@@ -3,7 +3,7 @@
     background-image:url(Images/openbooks.jpg);
     height: 750px;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: cover;
     display: flex;
     justify-content: center;
